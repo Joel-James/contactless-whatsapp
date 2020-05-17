@@ -71,7 +71,7 @@ export default {
     },
 
     validate() {
-      return this.number.match(/^\d{10}$/);
+      return this.number.match(/^\d{12}$/);
     }
   }
 };
