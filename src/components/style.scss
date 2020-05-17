@@ -1,5 +1,6 @@
 body,
 input,
+select,
 body * {
   box-sizing: border-box;
 
@@ -97,6 +98,39 @@ h1 {
         ~ .bar::before {
           width: 100%;
           left: 0;
+        }
+      }
+    }
+
+    select {
+      width: 100%;
+      font-size: 1rem;
+      height: 1.6rem;
+      padding: 0.125rem 0.125rem 0.0625rem;
+      background: none;
+      border: none;
+      line-height: 1.6;
+      box-shadow: none;
+
+      ~ .control-label {
+        font-size: 0.8rem;
+        color: gray;
+        top: -1rem;
+        left: 0;
+      }
+
+      &:focus {
+        outline: none;
+
+        ~ .control-label {
+          color: #337ab7;
+        }
+
+        ~ .bar {
+          &:before {
+            width: 100%;
+            left: 0;
+          }
         }
       }
     }

@@ -8,8 +8,19 @@
         <h1>Contactless WhatsApp</h1>
         <p
           class="form-description"
-        >Enter a full phone number in international format. Omit any zeroes, brackets, or dashes</p>
-        <div :class="formGroupClass">
+        >Enter a full 10 digit phone number without international prefix. Omit any zeroes, brackets, or dashes</p>
+        <div class="form-group">
+          <select v-model="country">
+            <option
+              v-for="country in countries"
+              :key="country.code"
+              :value="country.dial_code"
+            >{{ country.name }}</option>
+          </select>
+          <label for="select" class="control-label">Country</label>
+          <i class="bar"></i>
+        </div>
+        <div :class="numberGroupClass">
           <input type="text" required="required" v-model="number" />
           <label for="input" class="control-label">Phone Number</label>
           <i class="bar"></i>
@@ -26,13 +37,17 @@
 </template>
 
 <script>
+import countries from './../data/countries.json';
+
 export default {
   name: 'App',
 
   data() {
     return {
       number: '',
-      error: false
+      error: false,
+      country: 91,
+      countries: countries
     };
   },
 
@@ -61,7 +76,7 @@ export default {
      *
      * @returns {object}
      */
-    formGroupClass() {
+    numberGroupClass() {
       return {
         'form-group': true,
         'has-error': this.error
@@ -82,7 +97,7 @@ export default {
       if (this.validate()) {
         this.error = false;
         // Redirect to whatsapp.
-        window.location.href = 'https://wa.me/' + this.number;
+        window.location.href = 'https://wa.me/' + this.country + this.number;
       } else {
         // Or set error.
         this.error = true;
@@ -106,7 +121,7 @@ export default {
      * @returns {boolean}
      */
     validate() {
-      return this.number.match(/^\d{12}$/);
+      return this.country > 0 && this.number.match(/^\d{10}$/);
     }
   }
 };
