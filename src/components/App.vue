@@ -1,20 +1,24 @@
 <template>
   <div id="app">
     <div class="container">
+      <a href="https://duckdev.com" target="_blank">
+        <img class="logo" src="../assets/duck.png" />
+      </a>
       <form>
-        <h1>{{ title }}</h1>
+        <h1>Contactless WhatsApp</h1>
+        <p
+          class="form-description"
+        >Enter a full phone number in international format. Omit any zeroes, brackets, or dashes</p>
         <div :class="formGroupClass">
           <input type="text" required="required" v-model="number" />
           <label for="input" class="control-label">Phone Number</label>
           <i class="bar"></i>
-          <span
-            class="form-help"
-          >Enter a full phone number in international format. Omit any zeroes, brackets, or dashes</span>
+          <span class="error-message" v-if="error">Invalid phone number</span>
         </div>
       </form>
       <div class="button-container">
         <button type="button" class="button" @click="openWhatsApp">
-          <span>Message</span>
+          <span>Open WhatsApp</span>
         </button>
       </div>
     </div>
@@ -28,14 +32,8 @@ export default {
   data() {
     return {
       number: '',
-      error: false,
-      title: 'Contactless WhatsApp'
+      error: false
     };
-  },
-
-  created() {
-    // Set the page title.
-    document.title = this.title;
   },
 
   watch: {

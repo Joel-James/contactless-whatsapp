@@ -1,9 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
-
 body,
 input,
 body * {
-  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 
   &:after,
@@ -13,6 +10,8 @@ body * {
 }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
   background-image: linear-gradient(top, #f2f2f2, #e6e6e6);
 }
@@ -20,7 +19,7 @@ body {
 h1 {
   font-size: 2rem;
   text-align: center;
-  margin: 0 0 2em;
+  margin: 0 0 1em;
 }
 
 .container {
@@ -151,15 +150,11 @@ h1 {
         left: 0;
         width: 100%;
       }
-    }
 
-    .form-help {
-      margin-top: 0.125rem;
-      margin-left: 0.125rem;
-      color: #b3b3b3;
-      font-size: 0.8rem;
-      position: absolute;
-      width: 100%;
+      .error-message {
+        color: #d9534f;
+        font-size: 12px;
+      }
     }
   }
 
@@ -229,5 +224,20 @@ h1 {
         outline: none;
       }
     }
+  }
+
+  .form-description {
+    text-align: center;
+    margin: 0 0 4em;
+  }
+
+  img.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+    max-width: 60%;
+    margin-bottom: 10%;
   }
 }
