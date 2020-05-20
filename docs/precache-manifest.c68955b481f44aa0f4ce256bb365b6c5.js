@@ -32,7 +32,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/manifest.json"
   },
   {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "revision": "5e0bd1c281a62a380d7a948085bfe2d1",
     "url": "/robots.txt"
   }
 ]);
