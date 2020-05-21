@@ -2,7 +2,7 @@
   <div id="app">
     <div class="container">
       <a href="https://duckdev.com" target="_blank">
-        <img class="logo" src="../assets/duck.png" />
+        <img class="logo" src="../assets/whatsapp.png" />
       </a>
       <form>
         <h1>Contactless WhatsApp</h1>
