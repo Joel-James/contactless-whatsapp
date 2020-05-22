@@ -4,10 +4,12 @@
       <a href="https://duckdev.com" target="_blank">
         <img class="logo" src="../assets/whatsapp.png" />
       </a>
-      <form>
-        <h1>Contactless WhatsApp</h1>
+      <h1>Contactless WhatsApp</h1>
+      <h3 class="error" v-if="!isMobile">This web application is only available from mobile.</h3>
+      <form v-if="isMobile">
         <p
           class="form-description"
+          v-if="isMobile"
         >Enter a full 10 digit phone number without international prefix. Omit any zeroes, brackets, or dashes</p>
         <div class="form-group">
           <select v-model="country">
@@ -27,7 +29,7 @@
           <span class="error-message" v-if="error">Invalid phone number</span>
         </div>
       </form>
-      <div class="button-container">
+      <div class="button-container" v-if="isMobile">
         <button type="button" class="button" @click="openWhatsApp">
           <span>Open WhatsApp</span>
         </button>
@@ -81,6 +83,17 @@ export default {
         'form-group': true,
         'has-error': this.error
       };
+    },
+
+    /**
+     * Check if current device is mobile.
+     *
+     * @since 1.0.0
+     *
+     * @returns {boolean}
+     */
+    isMobile() {
+      return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     }
   },
 

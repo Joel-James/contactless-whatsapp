@@ -23,6 +23,16 @@ h1 {
   margin: 0 0 1em;
 }
 
+h3 {
+  text-align: center;
+
+  &.error {
+    color: #ff876e;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+}
+
 .container {
   position: relative;
   max-width: 40rem;
