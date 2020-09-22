@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.7d97c9c99ae129281adcdf1902a1adbe.js"
+  "/precache-manifest.7228e56e98485100f9cd1b6480b398c0.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "whatsapp"});
