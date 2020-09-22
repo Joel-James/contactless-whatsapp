@@ -5,7 +5,9 @@
         <img class="logo" src="../assets/whatsapp.png" />
       </a>
       <h1>Contactless WhatsApp</h1>
+      <p class="subtitle">by <a href="https://duckdev.com" target="_blank">Joel James</a></p>
       <h3 class="error" v-if="!isMobile">This web application is only available from mobile.</h3>
+
       <form v-if="isMobile">
         <p
           class="form-description"
