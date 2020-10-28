@@ -25,7 +25,7 @@
           <i class="bar"></i>
         </div>
         <div :class="numberGroupClass">
-          <input type="text" required="required" v-model="number" />
+          <input type="number" required="required" v-model="number" />
           <label for="input" class="control-label">Phone Number</label>
           <i class="bar"></i>
           <span class="error-message" v-if="error">Invalid phone number</span>
